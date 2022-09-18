@@ -51,7 +51,7 @@ namespace BNG{
         {
             if(other.gameObject.tag == "SurviveItem" || other.gameObject.tag == "Floor" || other.gameObject.tag == "Build")
             {
-            buildPossibleInt += 1;
+                buildPossibleInt += 1;
             }
         }
 
@@ -59,15 +59,15 @@ namespace BNG{
         {
             if(other.gameObject.tag == "SurviveItem" || other.gameObject.tag == "Floor" || other.gameObject.tag == "Build")
             {
-            buildPossibleInt -= 1;
+                buildPossibleInt -= 1;
 
-            // 공중에 건축이 되어진 상태로 남겨지는걸 방지하기위한 코드
-            // 건축화 해제시 공중에 떠있는 개체가 없도록 방지
-            if(buildPossibleInt <= 0 && firedBool == false)
-            {
-                buildRigidBody.constraints = RigidbodyConstraints.None;
-                buildGrabbable.enabled = true;
-            }
+                // 공중에 건축이 되어진 상태로 남겨지는걸 방지하기위한 코드
+                // 건축화 해제시 공중에 떠있는 오브젝트가 없도록 방지
+                if(buildPossibleInt <= 0 && firedBool == false)
+                {
+                    buildRigidBody.constraints = RigidbodyConstraints.None;
+                    buildGrabbable.enabled = true;
+                }
             }
         }
     }
