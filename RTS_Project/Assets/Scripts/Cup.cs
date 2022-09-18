@@ -9,6 +9,12 @@ public class Cup : MonoBehaviour
     
     void Update()
     {
+        Cup_fall();
+    }
+
+    // 일정 각도 이상 컵을 기울였을경우 물을 제거
+    void Cup_fall()
+    {
         if(Math.Abs(cup.transform.rotation.x) > 0.72 || Math.Abs(cup.transform.rotation.y) > 0.72)
         {
             cup_water.SetActive(false);
@@ -19,7 +25,7 @@ public class Cup : MonoBehaviour
         if(other.gameObject.CompareTag("Water"))
         {
             cup_water.SetActive(true);
-            Debug.Log("물");
+            // Debug.Log("물");
         }
     }
 }

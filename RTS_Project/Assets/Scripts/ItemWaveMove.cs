@@ -58,20 +58,20 @@ namespace StylizedWater2
         void OnTriggerEnter(Collider other)
         {   
             // 웨이브에 맞닿았을때
-            if(other.gameObject.tag == "Wave" && grabBool == false)
+            if(other.gameObject.CompareTag("Wave") && grabBool == false)
             {
                 objectOnWaterBool = true;
                 floatingTransform.enabled = true;
                 surviveRigidbody.isKinematic = true;
             }
 
-            if(other.gameObject.tag == "SurviveItem")
+            if(other.gameObject.CompareTag("SurviveItem"))
             {
                 crashOtherObjectInt += 1;
             }
 
             // 물건이 맞닿아있거나 건물 벽에 맞닿아 있는 경우 
-            if(other.gameObject.tag == "WaveDestroy")
+            if(other.gameObject.CompareTag("WaveDestroy"))
             {
                 crashWaveDestroyBool = true;
             }
@@ -79,7 +79,7 @@ namespace StylizedWater2
 
         void OnTriggerStay(Collider other)
         {
-            if(other.gameObject.tag == "WaveDestroy")
+            if(other.gameObject.CompareTag("WaveDestroy"))
             {
                 crashWaveDestroyBool = true;
             }
@@ -88,12 +88,12 @@ namespace StylizedWater2
         void OnTriggerExit(Collider other)
         {
             // 파도에서 벗어났을때 움직이지 않도록 설정
-            if(other.gameObject.tag == "Wave")
+            if(other.gameObject.CompareTag("Wave"))
             {
                 objectOnWaterBool = false;
             }
 
-            if(other.gameObject.tag == "SurviveItem")
+            if(other.gameObject.CompareTag("SurviveItem"))
             {
                 crashOtherObjectInt -= 1;
             }

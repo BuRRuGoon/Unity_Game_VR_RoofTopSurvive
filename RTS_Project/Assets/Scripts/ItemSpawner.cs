@@ -12,12 +12,12 @@ public class ItemSpawner : MonoBehaviour
     private float currentTime;
     private int itemArray;
 
-    // Update is called once per frame
     void Update()
     {
         ItemRespone();
     }
 
+    // 배열에 있는 게임 오브젝트 프리팹을 랜덤하게 생성해주는 함수
     void ItemRespone()
     {
         // 시간이 흐르게 만듬

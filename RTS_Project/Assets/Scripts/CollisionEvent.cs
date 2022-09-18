@@ -10,7 +10,7 @@ public class CollisionEvent : MonoBehaviour
     private int count = 0;
     Vector3 newPosition;
 
-
+    // 물체 생성시 기존에 부모 오브젝트 위치, 회전값을 적용하는 함수
     void SetNewTransform()
     {
         // 오브젝트 생성시 기존에 오브젝트 위치, 회전 적용
